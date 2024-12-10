@@ -1,9 +1,9 @@
 public class Student {
-    int id;
-    String name;
-    int grade;
-    int feesPaid;
-    int totalFess;
+    private int id;
+    private String name;
+    private int grade;
+    private int feesPaid;
+    private int totalFess;
 
     public Student(int id, String name, int grade) {
         this.id = id;
@@ -33,8 +33,9 @@ public class Student {
         return totalFess;
     }
 
-    public void updateFeesPaid(int fees) {
+    public void payFees(int fees) {
         this.feesPaid += fees;
+        School.updateTotalMoneyEarned(this.feesPaid);
     }
 
     public void updateTotalFess(int actualFess) {
@@ -43,5 +44,9 @@ public class Student {
 
     public void updateGrade(int grade) {
         this.grade = grade;
+    }
+
+    public int getRemainingFees() {
+        return totalFess = feesPaid;
     }
 }
