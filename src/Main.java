@@ -1,15 +1,42 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Teacher marioBaigon = new Teacher(1, "Mario Baigon", 1500);
+        Teacher vickybert = new Teacher(3, "Mario Vickybert", 1000);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        List<Teacher> teacherList = new ArrayList<>();
+        teacherList.add(marioBaigon);
+        teacherList.add(vickybert);
+
+
+
+        Student nicolas = new Student(1, "Nicolas", 1);
+        Student diego = new Student(2, "Diego", 1);
+        Student vini = new Student(5, "Vini Ferreira", 3);
+
+        List<Student> studentList = new ArrayList<>();
+        studentList.add(diego);
+        studentList.add(vini);
+        studentList.add(nicolas);
+
+        School fatec = new School(studentList, teacherList);
+
+        nicolas.payFees(500);
+        vini.payFees(6000);
+        System.out.println("------School Management------");
+        System.out.println("Fatec has earned: $"+ fatec.getTotalMoneyEarned());
+
+        System.out.println("------Making Fatec pay salary------");
+        marioBaigon.receiveSalary(marioBaigon.getSalary());
+        System.out.println("Fatec has spent for salary to " + marioBaigon.getName() + "and now has $" +fatec.getTotalMoneyEarned());
+        System.out.println("So, Fatec has spent: $" + fatec.getTotalMoneySpent() + " with teachers salaries");
+
+
+        vickybert.receiveSalary(vickybert.getSalary());
+        System.out.println("Fatec has spent for salary to " + marioBaigon.getName() + "and now has $" +fatec.getTotalMoneyEarned());
+        System.out.println("So, Fatec has spent: $" + fatec.getTotalMoneySpent() + " with teachers salaries");
+
     }
 }
