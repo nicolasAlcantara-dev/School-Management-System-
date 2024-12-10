@@ -30,6 +30,7 @@ public class Main {
 
         System.out.println("------Making Fatec pay salary------");
         marioBaigon.receiveSalary(marioBaigon.getSalary());
+        marioBaigon.receiveSalary(marioBaigon.getSalary());
         System.out.println("Fatec has spent for salary to " + marioBaigon.getName() + "and now has $" +fatec.getTotalMoneyEarned());
         System.out.println("So, Fatec has spent: $" + fatec.getTotalMoneySpent() + " with teachers salaries");
 
@@ -38,5 +39,10 @@ public class Main {
         System.out.println("Fatec has spent for salary to " + marioBaigon.getName() + "and now has $" +fatec.getTotalMoneyEarned());
         System.out.println("So, Fatec has spent: $" + fatec.getTotalMoneySpent() + " with teachers salaries");
 
+        System.out.println(" ");
+
+
+        System.out.println(marioBaigon);
+        System.out.println(diego);
     }
 }
